@@ -25,6 +25,7 @@
             :comment="item.comment"
             :value="item.value"
             :id="item.id"
+            @deleteItem="this.$emit('deleteItem', $event)"
         />
       </template>
     </el-card>

@@ -7,7 +7,7 @@
       <span class="budget-value" :class="classType">
         {{ value }} <i :class="classIcon"></i>
       </span>
-      <el-button type="danger" size="small" @click="deleteItem(id)">Delete</el-button>
+      <el-button type="danger" size="small" @click="$emit('deleteItem', id)">Delete</el-button>
     </div>
   </div>
 </template>
@@ -49,9 +49,6 @@ export default {
     },
   },
   methods: {
-    deleteItem(id) {
-      this.$emit("deleteItem", id);
-    },
   }
 }
 </script>

@@ -69,10 +69,7 @@ export default {
     }
   },
   methods: {
-    onDeleteItem: function (id) {
-      console.log('onDeleteItem from App');
-      console.log('id', id);
-      console.log('this.list', this.list, this.list[id]);
+    onDeleteItem(id) {
       delete this.list[id];
     },
     onFormSubmit: function (data) {
