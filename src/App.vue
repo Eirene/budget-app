@@ -67,7 +67,6 @@ export default {
   methods: {
     onDeleteItem(id) {
       let confirmDelete = confirm("Are you sure?");
-      console.log(confirmDelete);
       if (confirmDelete) delete this.list[id];
     },
     onFormSubmit: function (data) {
