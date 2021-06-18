@@ -9,20 +9,15 @@
         <el-col :md="9">
           <Form @submitForm="onFormSubmit" />
         </el-col>
-        <el-col :md="9">
-          <Dialog />
-        </el-col>
       </el-row>
     </el-main>
   </el-container>
-
 </template>
 
 <script>
 import BudgetList from "@/components/BudgetList";
 import TotalBalance from "@/components/TotalBalance";
 import Form from "@/components/Form";
-import Dialog from "@/components/Dialog";
 
 export default {
   name: 'App',
@@ -30,10 +25,10 @@ export default {
     BudgetList,
     TotalBalance,
     Form,
-    Dialog
   },
-  data: () => ({
-    list: {
+  data: () => {
+    return {
+      list: {
       1: {
         type: 'Income',
         value: 100,
@@ -59,7 +54,8 @@ export default {
         id: 4
       }
     }
-  }),
+    }
+  },
   computed: {
     totalBalance() {
       return Object.values(this.list).reduce(
@@ -70,7 +66,9 @@ export default {
   },
   methods: {
     onDeleteItem(id) {
-      delete this.list[id];
+      let confirmDelete = confirm("Are you sure?");
+      console.log(confirmDelete);
+      if (confirmDelete) delete this.list[id];
     },
     onFormSubmit: function (data) {
       const newObj = {
