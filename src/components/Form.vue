@@ -66,6 +66,9 @@ export default {
 </script>
 
 <style scoped>
+.form-card {
+  margin-top: 73px;
+}
 .type-select {
   width: 100%;
 }
